@@ -1,0 +1,23 @@
+<head>
+  <title>tryhard.demo.performance100</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <h1>Tryhard.demo.PERFORMANCE100</h1>
+  <h2>(client-side Vanilla JS)</h2>
+  {{> perf}}
+</body>
+
+<template name="perf">
+  <button class="addPointers">Add 10 clients</button>
+  <button class="startAnimation">startAnimation</button>
+  <button class="stopAnimation">stopAnimation</button>
+
+  {{#each client}}
+
+  <div class="pointer" id="pointer{{@index}}" style="width:15px; height:25px; background-size:contain; background-image:url({{cursorSrc}}); position:absolute; left:{{getCoords arg=0}}px; top:{{getCoords arg=1}}px;">
+    <p style="margin-left: 15px">{{id}}</p>
+  </div>
+  {{/each}}
+</template>
